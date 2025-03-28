@@ -1,0 +1,33 @@
+# Version control
+.git/
+.gitignore
+
+# Environment files (contain sensitive information)
+.env
+.env.*
+!.env.example
+
+# Docker files (not needed inside the container)
+.dockerignore
+
+# Build artifacts
+/tmp/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Other unnecessary files for the container
+/docs/
+README.md
