@@ -43,7 +43,7 @@ func NewAppAuth() (*AppAuth, error) {
 	// Load private key from environment-specified path
 	keyPath := os.Getenv("GITHUB_APP_PRIVATE_KEY_PATH")
 	if keyPath == "" {
-		keyPath = "./glitchy.pem" // Default fallback
+		keyPath = "/app/keys/glitchy.pem" // Default fallback for Docker container
 		log.Warn("GITHUB_APP_PRIVATE_KEY_PATH not set, using default path", "path", keyPath)
 	}
 	

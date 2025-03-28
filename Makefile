@@ -12,7 +12,16 @@ docker-build:
 	docker build -t $(APP_NAME) .
 
 docker-run:
-	docker run -p 8080:8080 --env-file .env -v ./glitchy.pem:/app/keys/glitchy.pem:ro $(APP_NAME)
+	@if [ ! -f glitchy.pem ]; then \
+		echo "Error: glitchy.pem not found in current directory"; \
+		echo "Place your GitHub App private key in the current directory with filename 'glitchy.pem'"; \
+		exit 1; \
+	fi
+	@if [ ! -f .env ]; then \
+		echo "Creating basic .env file with default settings"; \
+		$(MAKE) init; \
+	fi
+	docker run -p 8080:8080 --env-file .env -e GITHUB_APP_PRIVATE_KEY_PATH=/app/keys/glitchy.pem -v ./glitchy.pem:/app/keys/glitchy.pem:ro $(APP_NAME)
 
 clean:
 	rm -f $(APP_NAME)
@@ -22,6 +31,3 @@ test:
 
 deps:
 	go mod tidy
-
-init:
-	cp -n .env.example .env || true
