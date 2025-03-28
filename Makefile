@@ -18,8 +18,9 @@ docker-run:
 		exit 1; \
 	fi
 	@if [ ! -f .env ]; then \
-		echo "Creating basic .env file with default settings"; \
-		$(MAKE) init; \
+		echo "Error: .env file not found in current directory"; \
+		echo "Create a .env file with the required environment variables"; \
+		exit 1; \
 	fi
 	docker run -p 8080:8080 --env-file .env -e GITHUB_APP_PRIVATE_KEY_PATH=/app/keys/glitchy.pem -v ./glitchy.pem:/app/keys/glitchy.pem:ro $(APP_NAME)
 
