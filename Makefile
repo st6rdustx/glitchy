@@ -14,12 +14,6 @@ docker-build:
 docker-run:
 	docker run -p 8080:8080 --env-file .env -v ./glitchy.pem:/app/keys/glitchy.pem:ro $(APP_NAME)
 
-docker-compose-up:
-	docker-compose up -d
-
-docker-compose-down:
-	docker-compose down
-
 clean:
 	rm -f $(APP_NAME)
 
