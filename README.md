@@ -71,7 +71,7 @@ $ make docker-run
 
 ```bash
 # Install dependencies
-$ go mod tidy
+$ make deps
 
 # Run the app
 $ make run
