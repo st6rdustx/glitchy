@@ -12,7 +12,7 @@ RUN go mod download
 COPY . .
 
 # Build the application correctly
-RUN go build -o glitchy
+RUN go build -o glitchy ./cmd/glitchy
 
 # Use a minimal alpine image for the final stage
 FROM alpine:latest

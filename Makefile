@@ -3,10 +3,10 @@
 APP_NAME = glitchy
 
 build:
-	go build -o $(APP_NAME)
+	go build -o $(APP_NAME) ./cmd/glitchy
 
 run:
-	go run main.go
+	go run ./cmd/glitchy
 
 docker-build:
 	docker build -t $(APP_NAME) .

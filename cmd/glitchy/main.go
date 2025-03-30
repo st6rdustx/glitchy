@@ -8,7 +8,7 @@ import (
 	"os"
 	"runtime"
 
-	"diogocastro.me/glitchy/github"
+	"diogocastro.me/glitchy/internal/github"
 	"github.com/charmbracelet/log"
 	"github.com/joho/godotenv"
 )

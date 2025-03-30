@@ -11,7 +11,7 @@ import (
 	"os"
 	"strings"
 
-	"diogocastro.me/glitchy/claude"
+	"diogocastro.me/glitchy/internal/claude"
 	"github.com/charmbracelet/log"
 	gh "github.com/google/go-github/v61/github"
 )
