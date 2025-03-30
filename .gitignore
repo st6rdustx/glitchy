@@ -15,7 +15,7 @@
 !docker-compose.yml
 !.dockerignore
 
-!.github/*
+!.github/*/*
 
 !Makefile
 
